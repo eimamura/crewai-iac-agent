@@ -2,7 +2,11 @@
 
 import os
 from crewai import Agent, Crew, Process, Task
-from langchain_openai import ChatOpenAI
+
+try:
+    from langchain_openai import ChatOpenAI
+except ImportError:
+    ChatOpenAI = None
 
 from .prompts import (
     AWS_ARCHITECT_ROLE,
@@ -29,7 +33,7 @@ def create_crew(requirements: str, dry_run: bool = False) -> Crew:
     
     if api_key and not dry_run:
         # Prefer OpenAI, fallback to Anthropic if available
-        if os.getenv("OPENAI_API_KEY"):
+        if os.getenv("OPENAI_API_KEY") and ChatOpenAI is not None:
             llm = ChatOpenAI(
                 model="gpt-4o-mini",
                 temperature=0.1,
