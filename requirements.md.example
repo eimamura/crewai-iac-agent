@@ -1,0 +1,15 @@
+# AWS Infrastructure Requirements
+
+## Requirements
+
+- ALB + ECS Fargate for API service
+- RDS PostgreSQL database
+- Separate dev/prod environments
+- Minimize cost
+- Terraform executed from a pipeline account (cross-account)
+
+## Additional Notes
+
+- Prefer managed services where possible
+- Use AWS best practices for security
+

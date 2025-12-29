@@ -41,6 +41,7 @@ uv sync
 
 **With requirements file:**
 ```bash
+# Create your requirements file (see requirements.md.example for format)
 uv run python -m iac_agent.main --requirements-file requirements.md
 ```
 
