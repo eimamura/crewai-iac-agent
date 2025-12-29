@@ -88,11 +88,17 @@ The agent will:
 
 The agent supports OpenAI (default) and can be extended for other providers.
 
-Set environment variables:
+**Option 1: Environment variables**
 ```bash
 export OPENAI_API_KEY="your-key-here"
 # or
 export ANTHROPIC_API_KEY="your-key-here"
+```
+
+**Option 2: .env file**
+```bash
+cp .env.example .env
+# Edit .env and add your API key
 ```
 
 If no API key is provided, use `--dry-run` mode for template-based drafts.
