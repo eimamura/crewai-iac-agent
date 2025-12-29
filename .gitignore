@@ -23,6 +23,9 @@ out/
 *.tfvars
 !*.tfvars.example
 
+# Requirements files (user-specific)
+requirements.md
+
 # IDE
 .vscode/
 .idea/
